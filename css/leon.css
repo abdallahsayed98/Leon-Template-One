@@ -1,9 +1,30 @@
 /* Start Variables */
 :root {
     --main-color: #10cab7;
+    --secondary-color: #2c4755;
 }
 /* End Variables */
 /* Start Global Rules */
+/* Start Component */
+.special-heading {
+    margin: 0;
+    text-align: center;
+    font-size: 162px;
+    line-height: 195px;
+    letter-spacing: -8px;
+    color: #f6f6f6;
+}
+
+.special-heading + p {
+    margin: -55px 0 0;
+    text-align: center;
+    font-size: 25px;
+    letter-spacing: -1px;
+    line-height: 35px;
+    color: #575757;
+}
+/* End Component */
+
 *  {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -22,6 +43,18 @@ body {
 }
 
 /* Small devices (landscape phones, 576px and up) */
+@media (max-width: 767px) {
+    .special-heading {
+        font-size: 80px;
+    }
+    .special-heading + p {
+        margin: -85px 0 0;
+    }
+    .special-heading + p {
+        font-size: 20px;
+    }
+}
+
 @media (min-width: 576px) { 
     .container {
         width: 550px;
@@ -203,6 +236,81 @@ body {
     color: #777;
     font-size: 17px;
 }
+/* Start Services */
+.services {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.services .services-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 100px;
+}
+
+.services .services-content .srv {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+@media(max-width:767px) {
+    .services .services-content .srv {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.services .services-content .srv i {
+    color: var(--main-color);
+    flex-basis: 60px;
+}
+
+.services .services-content .srv .text {
+    flex: 1;
+}
+
+.services .services-content .srv .text h3 {
+    margin: 0 0 20px;
+}
+
+.services .services-content .srv .text p {
+    color: #4d4c4c;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.services .services-content .image {
+    text-align: center;
+    position: relative;
+}
+
+.services .services-content .image::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    height: calc(100% + 100px);
+    background-color: var(--secondary-color);
+    width: 100px;
+    z-index: -1;
+}
+
+
+.services .services-content .image img {
+    width: 300px;
+    height: 330px;
+}
+
+@media (max-width: 1199px) {
+    .services .services-content .image {
+        display: none;
+    }
+}
+
+/* End Services */
+
 /* End Features */
 
 /* End Global Rules */
